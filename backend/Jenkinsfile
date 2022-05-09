@@ -1,7 +1,16 @@
 pipeline {
     agent any
-
     stages {
+        stage('Pull code from github') {
+            steps {
+                git branch: 'main', url: 'https://github.com/aomsk/Final_Devtool_Test.git'
+            }
+        }
+		stage('Download dependency') {
+            steps {
+                bat 'npm install'
+            }
+        }
         stage('go version') {
             steps {
                 bat 'go version'
@@ -12,6 +21,5 @@ pipeline {
                 bat 'node --version'
             }
         }
-
     }
 }
