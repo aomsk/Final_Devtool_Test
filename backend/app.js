@@ -3,10 +3,6 @@ const app = express()
 const port = process.env.PORT || 3000;
 const nodeEnv = process.env.NODE_ENV || 'development'
 
-// app.get('/', (req, res) => {
-//     res.send('<h1>Final Dev Tool</h1>')
-// })
-
 app.get('/', (req, res) => {
     const body = {
         status: "OK",
